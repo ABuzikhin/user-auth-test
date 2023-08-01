@@ -6,11 +6,35 @@
         <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
         {% block stylesheets %}
         {% endblock %}
+        <style>
+            body {
+                font-family: Verdana;
+                font-size: 14px;
+            }
+
+            .btn {
+                display: inline-block;
+                padding: 5px;
+                border: 1px solid #CCCCCC;
+            }
+
+        </style>
 
         {% block javascripts %}
         {% endblock %}
     </head>
     <body>
+        <div style="margin: 15px auto; padding: 15px; border: #6D28D9 1px solid; border-radius: 5px;">
+            <a class="btn" href="{{ path('app_main') }}">Home</a>
+
+            {% if app.user %}
+                <div class="btn">
+                    You are logged in as {{ app.user.userIdentifier }}, <a href="{{ path('app_logout') }}">Logout</a>
+                </div>
+            {% else %}
+                <a class="btn" href="{{ path('app_login') }}">Log In</a>
+            {% endif %}
+        </div>
         {% block body %}{% endblock %}
     </body>
 </html>
