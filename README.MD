@@ -3,9 +3,9 @@
 ## Getting Started
 
 1. To start the project run `docker-compose up -d`
-2. Open php conteiner shell `docker-compose exec php bash`
+2. Open php container shell `docker-compose exec php bash`
 3. Execute init script `sh ./.docker/init.sh`
-4. Open `https://localhost` in your favorite web browser
+4. Open `http://localhost` in your favorite web browser
 
 ## Stop Container
 
